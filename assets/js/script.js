@@ -119,3 +119,28 @@ addEventOnElements(hoverElements, "mouseover", function () {
 addEventOnElements(hoverElements, "mouseout", function () {
   cursor.classList.remove("hovered");
 });
+
+
+
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbynEsEW89OWaULRaxEInsLhdUH6ccvKp02UV4OYAxt_LvnhTVnmIIl5zukzzKquhivccQ/exec'
+    const form = document.forms['product']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank You! I Got Your Message Successfully." ))
+        .then(() => {  window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+  
+
+
+
+
+
+
+
+
+
+
