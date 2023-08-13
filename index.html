@@ -609,6 +609,21 @@
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
+  
+<script>
+
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbynEsEW89OWaULRaxEInsLhdUH6ccvKp02UV4OYAxt_LvnhTVnmIIl5zukzzKquhivccQ/exec'
+    const form = document.forms['product']
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => alert("Thank You! I Got Your Message Successfully." ))
+        .then(() => {  window.location.reload(); })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
+
 </body>
 
 </html>
